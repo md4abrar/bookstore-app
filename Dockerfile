@@ -1,2 +1,3 @@
 FROM tomcat:latest
-COPY target/*.war /usr/local/tomcat/webapps/
+LABEL maintainer "mr.shabuddinshaik@gmail.com"
+COPY *.war /usr/local/tomcat/webapps/

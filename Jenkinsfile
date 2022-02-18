@@ -35,8 +35,9 @@ pipeline {
 	 stage('Deploy to EKS Kubernetes cluster') {
 	   steps {
            sh '''
-	   sed -i 's/"${BUILD_NUMBER}"/${BUILD_NUMBER}/g' deployment.yaml
-	   kubectl apply -f deployment.yaml
+	   #sed -i 's/"${BUILD_NUMBER}"/${BUILD_NUMBER}/g' deployment.yaml
+	   #kubectl apply -f deployment.yaml
+	   kubectl create deployment onlinebookstore --image onlinebookstore:${BUILD_NUMBER}
 	   '''
     }
 }

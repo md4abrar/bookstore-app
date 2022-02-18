@@ -26,8 +26,8 @@ pipeline {
             sh '''
 	    APP_NAME=`ls -lrt target/ | awk '{print $9}' | grep ".war" | awk -F"-" '{print $1}'`
             docker tag $APP_NAME:${BUILD_NUMBER} mdabrar4devops/$APP_NAME:${BUILD_NUMBER}
-            echo $dockerhub_pwd | docker login -u mdabrar4devops --password-stdin
-	    # docker login -u mdabrar4devops -p $dockerhub_pwd
+            #echo $dockerhub_pwd | docker login -u mdabrar4devops --password-stdin
+	    docker login -u mdabrar4devops -p $dockerhub_pwd
             docker push mdabrar4devops/$APP_NAME:${BUILD_NUMBER}			
             '''
 	    }
@@ -35,7 +35,6 @@ pipeline {
 	 stage('Deploy to EKS Kubernetes cluster') {
 	   steps {
            sh '''
-	   #sed -i 's/"${BUILD_NUMBER}"/${BUILD_NUMBER}/g' deployment.yaml
 	   #kubectl apply -f deployment.yaml
 	   kubectl create deployment onlinebookstore --image onlinebookstore:${BUILD_NUMBER}
 	   '''

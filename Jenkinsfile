@@ -35,6 +35,7 @@ pipeline {
 	 stage('Deploy to EKS Kubernetes cluster') {
 	   steps {
            sh '''
+	   sed -i 's/"${BUILD_NUMBER}"/${BUILD_NUMBER}/g' deployment.yaml
 	   kubectl apply -f deployment.yaml
 	   '''
     }

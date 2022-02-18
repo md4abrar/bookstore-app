@@ -16,7 +16,7 @@ pipeline {
             steps {
             sh '''
             echo Creating the image on top of tomcat
-            APP_NAME=`ls -lrt target/ | awk '{print $9}' | grep ".war" | awk -F"SNAPSHOT" '{print $1}'`
+            APP_NAME=`ls -lrt target/ | awk '{print $9}' | grep ".war" | awk -F"-" '{print $1}'`
             docker build . -t $APP_NAME:${BUILD_NUMBER}
             '''
             }

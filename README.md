@@ -15,4 +15,4 @@
 6. Compute - EKS cluster
 
 # JENKINS PIPELINE
-![Alt Image text](Deployment_Pipeline.png?raw=true "Deployment_Pipeline")
+![Alt Image text](Deployment_Pipeline.PNG?raw=true "Deployment_Pipeline")

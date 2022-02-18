@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: maven-app
-        image: mdabrar4devops/onlinebookstore:19
+        image: mdabrar4devops/onlinebookstore:$BUILD_NUMBER
         imagePullPolicy: Always                                                         
         resources:
           limits:

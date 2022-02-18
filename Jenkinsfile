@@ -31,12 +31,13 @@ pipeline {
             docker push mdabrar4devops/$APP_NAME:${BUILD_NUMBER}			
             '''
 	    }
-}
-	    
+}   
 	 stage('Deploy to EKS Kubernetes cluster') {
 	   steps {
            sh '''
 	   kubectl apply -f deployment.yaml
+	   '''
     }
 }
-		
+}
+}

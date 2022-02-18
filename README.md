@@ -1,9 +1,9 @@
-# This web application demonstrates the use of Jenkins CICD pipeline to deploy webapps to EKS cluster.
+# Demonstrates the use of Jenkins CI-CD pipeline to deploy webapps to EKS cluster.
 
 # Pre requisites:
 1. Jenkins setup
 2. Jenkins user should have access to docker. [ May be by adding jenkins user to the docker group ]
-3. aws cli and kubectl installed on jenkins node
+3. aws cli and kubectl installed and setup on jenkins node
 
 # Tools Used
 
@@ -13,3 +13,6 @@
 4. Packaging - Docker
 5. Registry - Docker Hub
 6. Compute - EKS cluster
+
+# JENKINS PIPELINE
+![Alt Image text](Deployment_Pipeline.png?raw=true "Deployment_Pipeline")

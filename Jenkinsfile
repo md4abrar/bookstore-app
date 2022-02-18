@@ -23,10 +23,13 @@ pipeline {
         }  
         stage('Pushing to docker hub') {
             steps {
-            sh 'docker tag $APP_NAME:${BUILD_NUMBER} mdabrar4devops/$APP_NAME:${BUILD_NUMBER}'
-            sh 'echo $dockerhub_pwd | docker login -u mdabrar4devops --password-stdin'
-            sh 'docker push mdabrar4devops/$APP_NAME:${BUILD_NUMBER}'			
-    }        
+            sh '''
+	    APP_NAME=`ls -lrt target/ | awk '{print $9}' | grep ".war" | awk -F"-" '{print $1}'`
+            docker tag $APP_NAME:${BUILD_NUMBER} mdabrar4devops/$APP_NAME:${BUILD_NUMBER}
+            echo $dockerhub_pwd | docker login -u mdabrar4devops --password-stdin
+            docker push mdabrar4devops/$APP_NAME:${BUILD_NUMBER}			
+            '''
+	    }
 }
     }
 }

@@ -1,7 +1,7 @@
 pipeline {
     agent any
 	environment {
-	     dockerhub_pwd=credentials('dockerhub_pwd_2')
+	     dockerhub_pwd=credentials('dockerhub_pwd_23')
   }
     stages {
         stage('Building the app') {

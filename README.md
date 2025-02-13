@@ -1,5 +1,3 @@
-# Demonstrates the use of Jenkins CI-CD pipeline to deploy webapps to EKS cluster.
-
 # Bookstore App
 
 **A full-stack bookstore application for managing books, authors, and users.Also demonstrated the use of Jenkins CI-CD pipeline to deploy webapps to EKS cluster**

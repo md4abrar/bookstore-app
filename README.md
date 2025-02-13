@@ -82,8 +82,11 @@ docker build -t bookstore-app .
 docker run -p 5000:5000 bookstore-app
 ```
 
-# JENKINS PIPELINE
+
+# Jenkins Pipeline
+
 ![Alt Image text](Deployment_Pipeline.PNG?raw=true "Deployment_Pipeline")
+
 
 
 ## License
